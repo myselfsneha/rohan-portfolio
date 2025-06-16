@@ -1,0 +1,7 @@
+node_modules/
+AppData/
+.vscode/
+*.log
+*.tmp
+__pycache__/
+.ipynb_checkpoints/
