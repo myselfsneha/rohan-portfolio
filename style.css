@@ -1,120 +1,169 @@
-/* General Reset */
+/* Reset & Base Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f9f9f9;
-  color: #222;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-
-header {
-  background: linear-gradient(to right, #5e60ce, #7400b8);
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-}
-
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  margin: 0 1rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffd166;
-}
-
-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-section h2 {
-  font-size: 2rem;
-  color: #5e60ce;
-  margin-bottom: 1rem;
-  animation: fadeInUp 1s ease;
-}
-
-.photo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  justify-content: center;
-}
-
-.photo-grid img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.photo-grid img:hover {
-  transform: scale(1.05);
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.btn {
-  background: #5e60ce;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #4ea8de;
-}
-
-footer {
-  background: #222;
-  color: #ddd;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-/* Fade Animation */
-@keyframes fadeInUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: #0e0e0e;
+    color: #ffffff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding-bottom: 2rem;
   }
-}
+  
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #e0dede;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    text-align: center;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  a:hover {
+    color: #00ffcc;
+  }
+  
+  header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(135deg, #330867, #30cfd0);
+  }
+  
+  nav {
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    margin: 0 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  nav a:hover {
+    background-color: #00ffcc33;
+  }
+  
+  section {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .photo-grid img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 255, 204, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .photo-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  .buttons {
+    margin-top: 1rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: #00ffcc;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    margin: 0.5rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #009e84;
+    color: #fff;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    background: #121212;
+  }
+  /* Dark Mode */
+body.dark-mode {
+    background: #fdfdfd;
+    color: #111;
+  }
+  
+  body.dark-mode header {
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    color: #000;
+  }
+  
+  body.dark-mode h1, body.dark-mode h2 {
+    color: #111;
+  }
+  
+  body.dark-mode a {
+    color: #000;
+  }
+  
+  body.dark-mode .btn {
+    background: #111;
+    color: #fff;
+  }
+  
+  body.dark-mode footer {
+    background: #ddd;
+    color: #222;
+  }
+  
+  body.dark-mode .photo-grid img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #00ffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 9999;
+  }
+  #newsletter {
+    background: #f0f4ff;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  #newsletter h2 {
+    color: #5e60ce;
+    margin-bottom: 1rem;
+  }
+      

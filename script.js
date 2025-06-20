@@ -1,23 +1,23 @@
-// Animate sections on scroll
-const sections = document.querySelectorAll("section");
-
-const revealOnScroll = () => {
-  const scrollY = window.scrollY + window.innerHeight * 0.85;
-
-  sections.forEach((section) => {
-    if (scrollY > section.offsetTop) {
-      section.style.opacity = 1;
-      section.style.transform = "translateY(0)";
-    }
+// Optional: Smooth scroll for older browsers
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-};
-
-// Initial styles
-sections.forEach((section) => {
-  section.style.opacity = 0;
-  section.style.transform = "translateY(40px)";
-  section.style.transition = "all 0.8s ease";
+// Dark mode toggle
+const toggleBtn = document.getElementById("dark-toggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 });
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+// Loader
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+  });
+  
