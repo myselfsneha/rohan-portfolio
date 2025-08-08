@@ -3,7 +3,7 @@
 <p align="center">
   A modern, professional, and playful portfolio website for <strong>Rohan Pande</strong> — a session guitarist, music producer, and multi-instrumentalist.  
   <br/>
-  <a href="https://your-live-demo-link.com"><strong>View Live Site »</strong></a>
+  <a href="https://rohanpande.netlify.app/"><strong>View Live Site »</strong></a>
 </p>
 
 ---
