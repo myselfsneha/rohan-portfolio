@@ -10,7 +10,7 @@
 
 ## 📸 Screenshots
 <p align="center">
-  <img src="screenshot1.png" width="600" alt="Home Page"/>
+  <img src="screenshot.jpg" width="600" alt="Home Page"/>
   <br/>
   <em>Rohan Pande Portfolio Homepage</em>
 </p>
