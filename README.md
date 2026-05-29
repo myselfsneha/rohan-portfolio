@@ -1,82 +1,73 @@
-<h1 align="center">🎸 Rohan Pande - Portfolio 🎶</h1>
+# React + TypeScript + Vite
 
-<p align="center">
-  A modern, professional, and playful portfolio website for <strong>Rohan Pande</strong> — a session guitarist, music producer, and multi-instrumentalist.  
-  <br/>
-  <a href="https://rohanpande.netlify.app/"><strong>View Live Site »</strong></a>
-</p>
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 📸 Screenshots
-<p align="center">
-  <img src="screenshot.jpg" width="600" alt="Home Page"/>
-  <br/>
-  <em>Rohan Pande Portfolio Homepage</em>
-</p>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
----
+## React Compiler
 
-## 🚀 Features
-- 🎨 Modern UI with **Purple & Teal color scheme**
-- 🌓 Dark mode toggle
-- 🎥 Portfolio showcasing **audio & video work**
-- 🎯 Hover effects & smooth scrolling animations
-- 📱 Fully responsive design for all devices
-- 📅 Scheduling integration for bookings
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
+## Expanding the ESLint configuration
 
-## 🛠 Tech Stack
-- **Frontend:** HTML, CSS, JavaScript, React
-- **Styling:** Tailwind CSS
-- **Hosting:** Netlify
-- **Integrations:** Google Analytics, Newsletter, Calendly
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
----
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## 📦 Installation
-```bash
-# Clone the repository
-git clone https://github.com/your-username/rohan-pande-portfolio.git
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-# Navigate to project folder
-cd rohan-pande-portfolio
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-# Install dependencies
-npm install
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-# Run the project locally
-npm start
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-📝 Usage
-Visit the live site to view portfolio work.
-
-Use the Contact section or Booking feature to reach Rohan.
-
-Explore audio and video showcase for samples.
-
-📌 Roadmap
- Launch website
-
- Add more portfolio projects
-
- Add blog section for music tips
-
-🤝 Contributing
-Contributions are welcome!
-
-Fork the repo
-
-Create a branch (git checkout -b feature-name)
-
-Commit changes (git commit -m 'Add feature')
-
-Push to branch (git push origin feature-name)
-
-Open a Pull Request
-
-📜 License
-This project is licensed under the MIT License.
-
-💬 Connect
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
