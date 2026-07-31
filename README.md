@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# 🎸 Rohan Pande Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-Currently, two official plugins are available:
+A modern, responsive portfolio website developed for **Rohan Pande**, showcasing his musical journey, performances, projects, and contact information through an elegant and interactive user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📖 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio website was built to establish a professional online presence for musician **Rohan Pande**. The website highlights his work, achievements, and social presence while providing visitors with an engaging browsing experience across all devices.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🌐 Live Demo
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+https://rohannpande.netlify.app/
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ✨ Features
+
+### 🎵 Music Portfolio
+
+- Artist Introduction
+- About Section
+- Musical Journey
+- Featured Work
+
+### 🎨 User Interface
+
+- Responsive Design
+- Modern Layout
+- Smooth Navigation
+- Interactive Sections
+- Mobile Friendly
+
+### 📬 Contact
+
+- Contact Information
+- Social Media Links
+- Easy Communication
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- HTML5
+- CSS3
+
+### Tools
+
+- Git
+- GitHub
+- VS Code
+
+---
+
+## 🚀 Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/myselfsneha/rohan-portfolio.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🎯 Future Enhancements
+
+- Music Player Integration
+- Gallery Section
+- Event Booking Form
+- Performance Videos
+- Blog Section
+- Performance Analytics
+
+---
+
+## 👩‍💻 Developer
+
+Developed by **Sneha Singh**
+
+🌐 Portfolio: https://myselfsneha.github.io/sneha-portfolio/
+
+💼 LinkedIn: https://www.linkedin.com/in/singh--sneha/
+
+💻 GitHub: https://github.com/myselfsneha
+
+---
+
+## 📄 License
+
+This project was developed for portfolio and learning purposes.
+
+⭐ If you like this project, consider giving it a star!
