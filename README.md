@@ -1,116 +1,98 @@
-# 🎸 Rohan Pande Portfolio
+# 🎸 Rohan Pande — Artist Portfolio
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+A cinematic portfolio for the music, visuals, and creative journey of Rohan Pande.
 
-A modern, responsive portfolio website developed for **Rohan Pande**, showcasing his musical journey, performances, projects, and contact information through an elegant and interactive user interface.
+🔗 **Live Website:** https://rohannpande.netlify.app/
 
----
+A collaborative project combining frontend development, visual storytelling, and the artist's creative perspective. The redesign brings together editorial typography, earthy tones, subtle animations, and embedded music in one responsive experience.
 
-## 📖 Overview
+## ✨ What's Inside
 
-This portfolio website was built to establish a professional online presence for musician **Rohan Pande**. The website highlights his work, achievements, and social presence while providing visitors with an engaging browsing experience across all devices.
+🎵 **Music**
+- Featured *Junoon* track through Spotify
+- Embedded Spotify artist catalogue
+- Direct artist-profile link
 
----
+🎞️ **Visuals**
+- Cinematic hero section
+- Featured YouTube video
+- Photography gallery using existing portfolio assets
+- Subtle image hover effects and scroll reveals
 
-## 🌐 Live Demo
+📖 **Artist Journey**
+- Timeline-inspired storytelling layout
+- Space for verified career milestones and creative development
+- Animated section reveals
 
-https://rohannpande.netlify.app/
+🔗 **Socials & Contact**
+- Spotify and YouTube links
+- Dedicated booking and enquiry section
+- Contact form for professional enquiries
 
----
+📱 **Experience**
+- Responsive navigation with a mobile menu
+- Editorial typography and a midnight-earth color palette
+- Smooth section navigation
+- Reduced-motion support and visible keyboard focus states
 
-## ✨ Features
-
-### 🎵 Music Portfolio
-
-- Artist Introduction
-- About Section
-- Musical Journey
-- Featured Work
-
-### 🎨 User Interface
-
-- Responsive Design
-- Modern Layout
-- Smooth Navigation
-- Interactive Sections
-- Mobile Friendly
-
-### 📬 Contact
-
-- Contact Information
-- Social Media Links
-- Easy Communication
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
+## 🛠️ Built With
 
 - React
-- TypeScript
+- JavaScript
 - Vite
-- HTML5
-- CSS3
+- Tailwind CSS
+- Framer Motion
+- Spotify and YouTube embeds
 
-### Tools
-
-- Git
-- GitHub
-- VS Code
-
----
-
-## 🚀 Getting Started
-
-### Clone Repository
+## 🚀 Run It Locally
 
 ```bash
 git clone https://github.com/myselfsneha/rohan-portfolio.git
-```
-
-### Install Dependencies
-
-```bash
+cd rohan-portfolio
 npm install
-```
-
-### Start Development Server
-
-```bash
 npm run dev
 ```
 
+### Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+## 🤝 The Collaboration
+
+This is a collaborative project between **Sneha Singh** and **Rohan Pande**.
+
+- **Sneha Singh** — Frontend development, UI/UX redesign, responsive implementation, and technical integration.
+- **Rohan Pande** — Artist perspective and creative input, with further contributions developing as the project progresses.
+
+The goal is to build a portfolio that feels personal to the artist while bringing the technical and creative sides together.
+
+## 🎨 The Design Direction
+
+Midnight backgrounds, muted olive accents, warm cream typography, oversized editorial headings, and carefully paced motion.
+
+The focus is on the artist and the music — not generic cards or unnecessary visual effects.
+
+## 👩🏻‍💻 Connect
+
+**Sneha Singh**
+
+- Portfolio: https://myselfsneha.github.io/sneha-portfolio/
+- LinkedIn: https://www.linkedin.com/in/singh--sneha/
+- GitHub: https://github.com/myselfsneha
+
+**Rohan Pande**
+
+- Artist portfolio: https://rohannpande.netlify.app/
+
+## 📄 Credits
+
+Music, photography, videos, and third-party media belong to their respective owners. Embedded content is provided through Spotify and YouTube.
+
 ---
 
-## 🎯 Future Enhancements
+*Music · Movement · Memory.*
 
-- Music Player Integration
-- Gallery Section
-- Event Booking Form
-- Performance Videos
-- Blog Section
-- Performance Analytics
-
----
-
-## 👩‍💻 Developer
-
-Developed by **Sneha Singh**
-
-🌐 Portfolio: https://myselfsneha.github.io/sneha-portfolio/
-
-💼 LinkedIn: https://www.linkedin.com/in/singh--sneha/
-
-💻 GitHub: https://github.com/myselfsneha
-
----
-
-## 📄 License
-
-This project was developed for portfolio and learning purposes.
-
-⭐ If you like this project, consider giving it a star!
+⭐ If you like the project, consider giving the repository a star!
