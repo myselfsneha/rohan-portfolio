@@ -1,4 +1,3 @@
-```jsx
 import { motion, useReducedMotion } from "framer-motion";
 
 const platforms = [
@@ -163,4 +162,3 @@ export default function Socials() {
     </section>
   );
 }
-```
