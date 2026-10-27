@@ -1,4 +1,3 @@
-```jsx
 import { motion, useReducedMotion } from "framer-motion";
 
 const photos = [
@@ -247,4 +246,3 @@ export default function Visuals() {
     </section>
   );
 }
-```
