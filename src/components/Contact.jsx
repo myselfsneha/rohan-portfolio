@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const initialForm = {
@@ -10,11 +9,11 @@ const initialForm = {
   message: "",
 };
 
-const labelClass =
-  "block text-[10px] uppercase tracking-[0.2em] text-[#aaa696]";
-
 const inputClass =
-  "mt-3 w-full rounded-none border border-white/15 bg-[#1d1e19] px-4 py-4 text-sm text-[#eee8dc] outline-none transition-colors placeholder:text-[#77786c] focus:border-[#a2a184]";
+  "mt-3 w-full rounded-none border-0 border-b border-[#77785b]/40 bg-transparent px-0 py-4 text-sm text-[#eee8dc] outline-none transition-colors placeholder:text-[#77786c] focus:border-[#c2bd9b]";
+
+const labelClass =
+  "block text-[10px] uppercase tracking-[0.22em] text-[#aaa696]";
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
@@ -32,7 +31,7 @@ export default function Contact() {
     const { name, email, enquiryType, eventDate, location, message } = form;
 
     if (!name.trim() || !email.trim() || !message.trim()) {
-      setError("Please complete your name, email, and message.");
+      setError("A name, an email, and a few words are all we need to begin.");
       return;
     }
 
@@ -48,192 +47,210 @@ export default function Contact() {
       message.trim(),
     ].join("\n");
 
-    const mailto = `mailto:panderohan522@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
+    window.location.href =
+      `mailto:panderohan522@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
-    <section className="relative py-24 sm:py-32 lg:py-40">
-      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-24 h-64 w-64 rounded-full border border-[#77785b]/10 sm:h-96 sm:w-96" />
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-[#e9e4d7] px-5 py-24 text-[#22231d] sm:px-10 sm:py-32 lg:px-16 lg:py-40"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 top-12 font-display text-[20rem] italic leading-none text-[#77785b]/[0.06] sm:text-[30rem]"
+      >
+        R
+      </div>
 
-      <div className="relative grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-        <div className="flex flex-col">
-          <p className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-[#a2a184]">
-            <span className="h-px w-8 bg-[#a2a184]" />
+      <div className="relative mx-auto max-w-[1440px]">
+        <div className="mb-16 flex items-center justify-between gap-4 border-b border-[#22231d]/20 pb-5 sm:mb-24">
+          <p className="text-[10px] uppercase tracking-[0.28em] text-[#62634e]">
             05 / The next chapter
           </p>
-
-          <h2 className="max-w-xl font-display text-5xl font-normal leading-[0.95] tracking-[-0.045em] text-[#eee8dc] sm:text-7xl lg:text-[6.5rem]">
-            Let's make
-            <br />
-            something
-            <br />
-            <span className="italic text-[#a2a184]">resonate.</span>
-          </h2>
-
-          <p className="mt-8 max-w-md text-sm leading-7 text-[#aaa696] sm:text-base">
-            A performance, a creative collaboration, a new sound, or an idea
-            that doesn't fit into a box. Start with a message.
+          <p className="hidden text-[10px] uppercase tracking-[0.22em] text-[#62634e] sm:block">
+            Music · Movement · Memory
           </p>
+          <span className="font-display text-lg italic text-[#77785b]">
+            Let it begin.
+          </span>
+        </div>
 
-          <div className="mt-12 border-t border-white/15 pt-6">
-            <p className="mb-4 text-[9px] uppercase tracking-[0.24em] text-[#77786c]">
-              Prefer a direct conversation?
+        <div className="grid gap-16 lg:grid-cols-[1fr_0.8fr] lg:gap-24">
+          <div className="flex flex-col">
+            <p className="mb-8 max-w-xs text-xs leading-6 text-[#62634e]">
+              For the people with an idea, a stage, a story, or a sound worth
+              chasing.
             </p>
 
-            <a
-              href="mailto:panderohan522@gmail.com"
-              className="group flex w-fit max-w-full items-center gap-3 break-all text-sm text-[#eee8dc] transition-colors hover:text-[#a2a184]"
-            >
-              panderohan522@gmail.com
-              <span aria-hidden="true" className="shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
-                ↗
+            <h2 className="font-display text-[clamp(4rem,10vw,9.5rem)] font-normal leading-[0.82] tracking-[-0.065em]">
+              Something
+              <br />
+              <span className="pl-[8%] font-editorial italic text-[#77785b]">
+                starts
               </span>
-            </a>
+              <br />
+              <span className="text-[0.82em]">here.</span>
+            </h2>
 
-            <a
-              href="tel:+918087320795"
-              className="mt-4 inline-block text-sm text-[#aaa696] transition-colors hover:text-[#eee8dc]"
-            >
-              +91 80873 20795
-            </a>
+            <div className="mt-12 flex items-center gap-4 sm:mt-16">
+              <span className="h-px w-12 bg-[#77785b]" />
+              <p className="max-w-xs text-sm leading-6 text-[#62634e]">
+                No elaborate pitch needed. Tell me what you're imagining.
+              </p>
+            </div>
+
+            <div className="mt-16 border-t border-[#22231d]/20 pt-6 sm:mt-24">
+              <p className="mb-5 text-[9px] uppercase tracking-[0.25em] text-[#77785b]">
+                Or reach out directly
+              </p>
+
+              <a
+                href="mailto:panderohan522@gmail.com"
+                className="group flex w-fit max-w-full items-center gap-3 break-all font-display text-xl transition-colors hover:text-[#77785b] sm:text-2xl"
+              >
+                panderohan522@gmail.com
+                <span className="text-sm transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
+                  ↗
+                </span>
+              </a>
+
+              <a
+                href="tel:+918087320795"
+                className="mt-4 inline-block text-sm text-[#62634e] transition-colors hover:text-[#22231d]"
+              >
+                +91 80873 20795
+              </a>
+            </div>
           </div>
 
-          <div className="mt-auto hidden pt-16 lg:block">
-            <p className="mb-0 font-display text-2xl italic text-[#77786c]">
-              Music · Movement · Memory
-            </p>
+          <div className="relative lg:pt-12">
+            <div className="mb-10 flex items-end justify-between gap-4 border-b border-[#22231d]/20 pb-5">
+              <div>
+                <p className="mb-3 text-[9px] uppercase tracking-[0.25em] text-[#77785b]">
+                  Bookings / Collaborations
+                </p>
+                <h3 className="font-display text-3xl font-normal tracking-tight sm:text-4xl">
+                  Tell me the story.
+                </h3>
+              </div>
+              <span className="font-display text-2xl italic text-[#77785b]">
+                01—06
+              </span>
+            </div>
+
+            <form onSubmit={handleSubmit}>
+              <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
+                <label className={labelClass}>
+                  Your name *
+                  <input
+                    className={inputClass}
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    placeholder="Name"
+                    value={form.name}
+                    onChange={updateField}
+                    required
+                  />
+                </label>
+
+                <label className={labelClass}>
+                  Email address *
+                  <input
+                    className={inputClass}
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    placeholder="you@example.com"
+                    value={form.email}
+                    onChange={updateField}
+                    required
+                  />
+                </label>
+
+                <label className={labelClass}>
+                  What is it about?
+                  <select
+                    className={`${inputClass} cursor-pointer`}
+                    name="enquiryType"
+                    value={form.enquiryType}
+                    onChange={updateField}
+                  >
+                    <option>Live performance</option>
+                    <option>Collaboration</option>
+                    <option>Music production</option>
+                    <option>Video or media</option>
+                    <option>Other enquiry</option>
+                  </select>
+                </label>
+
+                <label className={labelClass}>
+                  Date, if applicable
+                  <input
+                    className={inputClass}
+                    type="date"
+                    name="eventDate"
+                    value={form.eventDate}
+                    onChange={updateField}
+                  />
+                </label>
+
+                <label className={`${labelClass} sm:col-span-2`}>
+                  Where is it happening?
+                  <input
+                    className={inputClass}
+                    type="text"
+                    name="location"
+                    placeholder="City, venue, or online"
+                    value={form.location}
+                    onChange={updateField}
+                  />
+                </label>
+
+                <label className={`${labelClass} sm:col-span-2`}>
+                  Tell me a little more *
+                  <textarea
+                    className={`${inputClass} min-h-36 resize-y leading-7`}
+                    name="message"
+                    placeholder="The idea, the occasion, the feeling you're after..."
+                    value={form.message}
+                    onChange={updateField}
+                    required
+                  />
+                </label>
+              </div>
+
+              {error && (
+                <p role="alert" className="mt-5 text-sm text-[#a4513d]">
+                  {error}
+                </p>
+              )}
+
+              <div className="mt-10 border-t border-[#22231d]/20 pt-6">
+                <button
+                  type="submit"
+                  className="group flex w-full items-center justify-between gap-4 border border-[#22231d] bg-[#22231d] px-5 py-5 text-left text-[10px] uppercase tracking-[0.22em] text-[#e9e4d7] transition-colors duration-300 hover:bg-[#77785b] hover:border-[#77785b] sm:px-7"
+                >
+                  <span>Let's start a conversation</span>
+                  <span className="text-xl transition-transform duration-300 group-hover:translate-x-2">
+                    ↗
+                  </span>
+                </button>
+
+                <p className="mt-4 text-[10px] leading-5 text-[#777568]">
+                  This prepares an email in your default mail app. You'll
+                  review and send it yourself.
+                </p>
+              </div>
+            </form>
           </div>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="border-t border-white/20 pt-7 sm:pt-9"
-        >
-          <div className="mb-8 flex items-start justify-between gap-4">
-            <div>
-              <p className="mb-2 text-[9px] uppercase tracking-[0.24em] text-[#77786c]">
-                Booking & collaborations
-              </p>
-              <h3 className="mb-0 font-display text-3xl font-normal text-[#eee8dc] sm:text-4xl">
-                Tell me the details.
-              </h3>
-            </div>
-            <span className="pt-1 font-display text-2xl italic text-[#a2a184]">
-              01—06
-            </span>
-          </div>
-
-          <div className="grid gap-x-5 gap-y-7 sm:grid-cols-2">
-            <label className={labelClass}>
-              Your name *
-              <input
-                className={inputClass}
-                type="text"
-                name="name"
-                autoComplete="name"
-                placeholder="What should I call you?"
-                value={form.name}
-                onChange={updateField}
-                required
-              />
-            </label>
-
-            <label className={labelClass}>
-              Email address *
-              <input
-                className={inputClass}
-                type="email"
-                name="email"
-                autoComplete="email"
-                placeholder="you@example.com"
-                value={form.email}
-                onChange={updateField}
-                required
-              />
-            </label>
-
-            <label className={labelClass}>
-              Type of enquiry
-              <select
-                className={inputClass}
-                name="enquiryType"
-                value={form.enquiryType}
-                onChange={updateField}
-              >
-                <option>Live performance</option>
-                <option>Collaboration</option>
-                <option>Music production</option>
-                <option>Video or media</option>
-                <option>Other enquiry</option>
-              </select>
-            </label>
-
-            <label className={labelClass}>
-              Event date
-              <input
-                className={inputClass}
-                type="date"
-                name="eventDate"
-                value={form.eventDate}
-                onChange={updateField}
-              />
-            </label>
-
-            <label className={`${labelClass} sm:col-span-2`}>
-              Location or venue
-              <input
-                className={inputClass}
-                type="text"
-                name="location"
-                placeholder="City, venue, or online"
-                value={form.location}
-                onChange={updateField}
-              />
-            </label>
-
-            <label className={`${labelClass} sm:col-span-2`}>
-              Your message *
-              <textarea
-                className={`${inputClass} min-h-40 resize-y leading-7`}
-                name="message"
-                placeholder="The idea, the occasion, the sound you're imagining..."
-                value={form.message}
-                onChange={updateField}
-                required
-              />
-            </label>
-          </div>
-
-          {error && (
-            <p role="alert" className="mt-5 text-sm text-[#d5a28f]">
-              {error}
-            </p>
-          )}
-
-          <div className="mt-8 border-t border-white/10 pt-6">
-            <button
-              type="submit"
-              className="group flex min-h-14 w-full items-center justify-between gap-4 bg-[#a2a184] px-5 text-left text-xs uppercase tracking-[0.16em] text-[#191a16] transition-colors hover:bg-[#eee8dc] sm:px-6"
-            >
-              <span>Prepare your enquiry</span>
-              <span
-                aria-hidden="true"
-                className="text-xl transition-transform group-hover:translate-x-1"
-              >
-                ↗
-              </span>
-            </button>
-
-            <p className="mb-0 mt-4 text-xs leading-6 text-[#77786c]">
-              Submitting opens your default email app with the details
-              prepared. You'll review and send the message yourself.
-            </p>
-          </div>
-        </form>
+        <div className="mt-24 flex flex-col justify-between gap-3 border-t border-[#22231d]/20 pt-5 text-[9px] uppercase tracking-[0.2em] text-[#777568] sm:mt-32 sm:flex-row">
+          <span>A good idea deserves a beginning.</span>
+          <span>Available for performances & creative work ↗</span>
+        </div>
       </div>
     </section>
   );
