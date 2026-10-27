@@ -1,6 +1,7 @@
+
 import { useEffect, useState } from "react";
 
-import Background from "./components/Background";
+import Background from "./Background";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Music from "./components/Music";
@@ -8,7 +9,7 @@ import Identity from "./components/Identity";
 import Visuals from "./components/Visuals";
 import Socials from "./components/Socials";
 import Contact from "./components/Contact";
-import Loader from "./components/Loader";
+import Loader from "./Loader";
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -35,13 +36,9 @@ export default function App() {
         </div>
 
         <Music />
-
         <Identity />
-
         <Visuals />
-
         <Socials />
-
         <Contact />
       </main>
 
