@@ -1,17 +1,43 @@
+```jsx
 import { useEffect } from "react";
 
 export default function useScrollStory() {
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    if (
+      typeof window === "undefined" ||
+      !("IntersectionObserver" in window)
+    ) {
+      return;
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active-section");
-        }
+    const sections = document.querySelectorAll(
+      "section:not([data-scroll-story='false'])"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active-section");
+          } else {
+            entry.target.classList.remove("active-section");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+      sections.forEach((section) => {
+        section.classList.remove("active-section");
       });
-    }, { threshold: 0.3 });
-
-    sections.forEach((sec) => observer.observe(sec));
+    };
   }, []);
 }
+```
