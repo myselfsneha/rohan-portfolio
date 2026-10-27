@@ -1,4 +1,3 @@
-```jsx
 import { useEffect, useState } from "react";
 
 const links = [
@@ -190,4 +189,3 @@ export default function Navbar() {
     </header>
   );
 }
-```
