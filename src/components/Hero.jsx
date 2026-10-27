@@ -1,127 +1,146 @@
-
 import { motion, useReducedMotion } from "framer-motion";
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
 
-  const reveal = {
+  const reveal = (delay = 0) => ({
     hidden: {
       opacity: 0,
-      y: reduceMotion ? 0 : 28,
+      y: reduceMotion ? 0 : 24,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: reduceMotion ? 0.01 : 0.85,
-        ease: "easeOut",
+        duration: reduceMotion ? 0.01 : 0.9,
+        delay: reduceMotion ? 0 : delay,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
-  };
+  });
 
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-[#191a16] px-5 pb-12 pt-32 sm:px-8 sm:pb-16 lg:min-h-screen lg:px-14 lg:pb-20"
+      className="relative isolate flex min-h-[100svh] flex-col justify-between overflow-hidden bg-[#191a16] px-5 pb-7 pt-28 text-[#eee8dc] sm:px-9 sm:pb-9 lg:px-16 lg:pt-32"
     >
-      {/* Atmospheric background */}
+      {/* Atmospheric layers */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute -right-[18%] top-[8%] h-[75vw] w-[75vw] max-h-[900px] max-w-[900px] rounded-full bg-[radial-gradient(circle,rgba(119,120,91,0.16)_0%,rgba(119,120,91,0.05)_38%,transparent_70%)]" />
-
-        <div className="absolute -left-[25%] bottom-[-40%] h-[85vw] w-[85vw] max-h-[850px] max-w-[850px] rounded-full bg-[radial-gradient(circle,rgba(138,98,74,0.12)_0%,transparent_68%)]" />
-
-        <div className="absolute right-[8%] top-[16%] h-[min(68vw,780px)] w-[min(68vw,780px)] rounded-full border border-[#a2a184]/15" />
-
-        <div className="absolute right-[14%] top-[22%] h-[min(56vw,640px)] w-[min(56vw,640px)] rounded-full border border-[#a2a184]/10" />
-
-        <div className="absolute right-[20%] top-[28%] h-[min(44vw,500px)] w-[min(44vw,500px)] rounded-full border border-[#a2a184]/[0.07]" />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#191a16] via-transparent to-[#191a16]/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_38%,rgba(119,120,91,0.18),transparent_48%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_10%_90%,rgba(138,98,74,0.12),transparent_42%)]" />
+        <div className="absolute right-[-18%] top-[12%] h-[70vw] w-[70vw] max-h-[850px] max-w-[850px] rounded-full border border-[#eee8dc]/[0.07]" />
+        <div className="absolute right-[-10%] top-[20%] h-[54vw] w-[54vw] max-h-[650px] max-w-[650px] rounded-full border border-[#a2a184]/[0.12]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#191a16]/20 via-transparent to-[#191a16]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1600px]">
+      {/* Opening note */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={reveal(0.1)}
+        className="flex items-center justify-between gap-4"
+      >
+        <div className="flex items-center gap-3">
+          <span className="h-px w-7 bg-[#a2a184]" />
+          <p className="mb-0 text-[9px] uppercase tracking-[0.24em] text-[#c0bc9d] sm:text-[10px] sm:tracking-[0.3em]">
+            Independent artist / Music & sound
+          </p>
+        </div>
+
+        <span className="hidden text-[9px] uppercase tracking-[0.22em] text-[#77786c] sm:block">
+          An ongoing composition
+        </span>
+      </motion.div>
+
+      {/* Artist title */}
+      <div className="relative mx-auto my-20 w-full max-w-[1600px] sm:my-24 lg:my-16">
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          variants={reveal(0.2)}
+          className="mb-5 ml-[2%] font-editorial text-lg italic text-[#aaa696] sm:mb-8 sm:text-2xl"
+        >
+          The world, in a different key.
+        </motion.p>
+
+        <motion.h1
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 m-0 font-display text-[clamp(5rem,16.8vw,16rem)] font-normal leading-[0.7] tracking-[-0.09em]"
+        >
+          <motion.span
+            variants={reveal(0.25)}
+            className="block"
+          >
+            Rohan
+          </motion.span>
+
+          <motion.span
+            variants={reveal(0.42)}
+            className="mt-[0.16em] block pl-[12%] font-editorial italic font-normal text-[#a2a184] sm:pl-[18%]"
+          >
+            Pande<span className="text-[#a66f52]">.</span>
+          </motion.span>
+        </motion.h1>
+
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={reveal}
-          className="mb-8 flex flex-wrap items-center gap-3 sm:mb-10"
+          variants={reveal(0.6)}
+          className="mt-10 flex items-start justify-between gap-6 sm:mt-14 lg:ml-[56%] lg:mt-8"
         >
-          <span className="h-px w-8 bg-[#a2a184]" />
-
-          <p className="mb-0 text-[10px] uppercase tracking-[0.3em] text-[#a2a184] sm:text-xs">
-            Independent artist · Music & sound
+          <p className="mb-0 max-w-[290px] text-sm leading-7 text-[#aaa696] sm:text-base sm:leading-8">
+            Somewhere between a melody and a memory, there's a story worth
+            telling.
           </p>
+
+          <span className="hidden pt-1 font-editorial text-4xl italic text-[#77786c] sm:block">
+            RP
+          </span>
         </motion.div>
 
-        <div className="relative">
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={reveal}
-            className="relative z-10 max-w-[1300px] font-display text-[clamp(4rem,14.5vw,13.5rem)] font-normal leading-[0.76] tracking-[-0.085em] text-[#eee8dc]"
-          >
-            Rohan
-            <br />
-
-            <span className="ml-[8vw] inline-block italic text-[#a2a184] sm:ml-[10vw]">
-              Pande
-              <span className="not-italic text-[#8a624a]">.</span>
-            </span>
-          </motion.h1>
-
-          <motion.span
-            aria-hidden="true"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: reduceMotion ? 0.01 : 1.4,
-              delay: reduceMotion ? 0 : 0.3,
-            }}
-            className="pointer-events-none absolute right-0 top-[8%] hidden select-none font-display text-[clamp(8rem,23vw,23rem)] leading-none text-[#eee8dc]/[0.025] lg:block"
-          >
-            RP
-          </motion.span>
-        </div>
-
-        <div className="mt-10 flex flex-col gap-7 border-t border-white/15 pt-6 sm:mt-14 sm:flex-row sm:items-end sm:justify-between lg:mt-16">
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={reveal}
-            className="mb-0 max-w-md text-sm leading-7 text-[#aaa696] sm:text-base"
-          >
-            A space for the music, the moments, and the stories still unfolding.
-          </motion.p>
-
-          <motion.a
-            initial="hidden"
-            animate="visible"
-            variants={reveal}
-            href="#music"
-            className="group inline-flex min-h-12 w-fit items-center gap-5 border-b border-[#a2a184]/60 pb-3 text-xs uppercase tracking-[0.2em] text-[#eee8dc] transition-colors hover:text-[#a2a184]"
-          >
-            Explore the music
-
-            <span
-              aria-hidden="true"
-              className="inline-block text-lg transition-transform duration-300 group-hover:translate-y-1"
-            >
-              ↓
-            </span>
-          </motion.a>
-        </div>
-
-        <div className="mt-10 flex items-center justify-between gap-4 text-[9px] uppercase tracking-[0.18em] text-[#77786c] sm:mt-14 sm:tracking-[0.2em]">
-          <span>Music · Movement · Memory</span>
-          <span className="flex items-center gap-3">
-            <span className="hidden h-px w-8 bg-[#77786c] sm:block" />
-            Scroll to explore
-          </span>
-        </div>
+        <motion.span
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: reduceMotion ? 0.01 : 1.5, delay: 0.5 }}
+          className="pointer-events-none absolute right-[2%] top-[2%] hidden select-none font-display text-[clamp(9rem,25vw,25rem)] leading-none text-[#eee8dc]/[0.025] lg:block"
+        >
+          R
+        </motion.span>
       </div>
+
+      {/* Bottom navigation cue */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={reveal(0.7)}
+        className="grid gap-6 border-t border-white/15 pt-5 sm:grid-cols-[1fr_auto_1fr] sm:items-end"
+      >
+        <p className="mb-0 text-[9px] uppercase tracking-[0.2em] text-[#77786c] sm:text-[10px]">
+          Music · Movement · Memory
+        </p>
+
+        <a
+          href="#music"
+          className="group inline-flex min-h-12 w-fit items-center gap-5 border-b border-[#a2a184]/60 pb-3 text-[10px] uppercase tracking-[0.2em] transition-colors hover:text-[#c0bc9d] sm:justify-self-center"
+        >
+          Enter the sound
+          <span
+            aria-hidden="true"
+            className="inline-block text-lg transition-transform duration-300 group-hover:translate-y-1"
+          >
+            ↓
+          </span>
+        </a>
+
+        <p className="mb-0 hidden text-right text-[9px] uppercase tracking-[0.2em] text-[#77786c] sm:block sm:text-[10px]">
+          Scroll slowly. Stay awhile.
+        </p>
+      </motion.div>
     </section>
   );
 }
